@@ -5,7 +5,6 @@ import time
 
 
 goalState=[[1,2,3],[8,0,4],[7,6,5]]
-dfsGoalstate= [1,2,3,8,0,4,7,6,5]
 startState=[]
 
 class Node:
@@ -79,7 +78,6 @@ class Node:
     #BFS
     def bfs(self):
         timeFlag=0
-        maxListSize=float("inf")
         totalNodes=0
         start_time = time.time()
         q = collections.deque()
@@ -88,8 +86,6 @@ class Node:
         q.append(startNode)
         flag = 0
         while (q):
-            if len(q)>maxListSize:
-                maxListSize=len(q)
             temp_time = time.time()
             if (temp_time - start_time >= 30):
                 timeFlag = 1
@@ -105,7 +101,6 @@ class Node:
                 print ('')
                 print ("Total Nodes Visited="+str(totalNodes))
                 print ("BFS Time"+ str(time.time()-start_time))
-                print ("Max List Size="+str(maxListSize))
 
             if flag is 1:
                 break
@@ -121,7 +116,7 @@ class Node:
 
 def mainfunction():
 
-    print ("Please input the  Start state in the form '(1 2 3 4 5 6 7 8 0)")
+    print ("Please input the  Start state in the form (1 2 3 8 6 4 7 0 5)")
     inStartState=(input())
     inStartState=inStartState.replace('(',' ( ')
     inStartState = inStartState.replace(')', ' ) ')
