@@ -8,14 +8,6 @@ goalState=[[1,2,3],[8,0,4],[7,6,5]]
 dfsGoalstate= [1,2,3,8,0,4,7,6,5]
 startState=[]
 
-class dfsNode:
-
-    def __init__(self,state,parent,movement,depth):
-        self.state = state
-        self.parent = parent
-        self.movement = movement
-        self.depth = depth
-#Node Structure for all algorithms other than dfs
 class Node:
     def __init__(self,starts=None,d=None,path=None,move=None,h=None):
         self.state=starts
